@@ -16,7 +16,11 @@
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 5px;">
                     <label style="font-size: 15px; font-weight: bold;" for="descriao">Categoria</label>
-                    <input class="inputs" ref="" type="text" style="height: 30px; padding-left: 5px; border-radius: 5px; border: 2px #A8A8A8 solid; width: 230px;">
+                    <!-- <input class="inputs" ref="" type="text" style="height: 30px; padding-left: 5px; border-radius: 5px; border: 2px #A8A8A8 solid; width: 230px;"> -->
+                    <select name="" id="" style="height: 30px; padding-left: 5px; border-radius: 5px; border: 2px #A8A8A8 solid; width: 230px;">
+                        <option value="semCategoria" selected disabled hidden></option>
+                        <option :value="item.categoria" v-for="item in categorias">{{ item.categoria }}</option>
+                    </select>
                 </div>
             </div>
             <div style="display: flex; flex-direction: row-reverse; gap: 10px;">
@@ -28,6 +32,8 @@
 </template>
 
 <script setup lang="ts">
+    const categorias = listaCategorias();
+
     function cancelarEdicao(){
         const inputs = document.querySelectorAll<HTMLInputElement>(".inputs");
         inputs.forEach(x => {

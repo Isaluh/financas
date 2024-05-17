@@ -14,16 +14,24 @@
     export default {
         methods: {
             inserirConteudo() {
-                const value : string = this.$refs.conteudo.value;
-                const inputs = document.querySelector(".inputs");
-                inserirCategorias(cont, value);
+                const inputs = document.querySelector<HTMLInputElement>(".inputs");
+                if(typeof(inputs?.value) == "string" && inputs?.value.trim() != ""){
+                    inserirCategorias(cont, inputs?.value);
+                    inputs.value = "";
+                }else{
+                    //retornar um erro
+                    console.log("valor inserido não condizente")
+                }
                 cont++;
-                inputs.value = "";
                 
             }
         }
     }
 </script>
+
+<!-- 
+    - fazer atualizar a parte da tabela de catgorias
+ -->
 
 <style lang="css" scoped>
 

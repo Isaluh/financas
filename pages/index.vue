@@ -14,25 +14,37 @@
             </div>
             <div style="display: flex; flex-direction: column; gap: 5px;">
                 <label style="font-size: 15px; font-weight: bold;" for="categorias">Categoria</label>
-                <input id="categorias" ref="" type="text" style="height: 30px; padding-left: 5px; border-radius: 5px; border: 2px #A8A8A8 solid;">
+                <select  name="" id="" style="height: 30px; padding-left: 5px; border-radius: 5px; border: 2px #A8A8A8 solid; width: 178px;">
+                        <option value="semCategoria" selected disabled hidden></option>
+                        <option :value="item.categoria" v-for="item in categorias">{{ item.categoria }}</option>
+                </select>
             </div>
             <button @click="" style="border: none; background-color: #2451d4; color: white; width: 68px; border-radius: 5px; height: 30px;">Procurar</button>
         </div>
         <span style="display: flex; border: 1px solid #cacaca; width: 100%;  margin-top: 20px;"></span>
+        <h2 style="color: #A8A8A8; font-size: 18px; text-align: center; margin-top: 20px;" v-if="transacao.length == 0">Nenhuma transação realizada</h2>
         <Transacao />
     </div>
 </template>
 
-<script>
-    export default {
-        methods: {
-            tirarHidden: function(event){
-                let button = event.target.parentNode.parentNode.querySelector("main");
-                button.toggleAttribute("hidden");
-            }
-        }
+<script setup lang="ts">
+    const categorias = listaCategorias();
+    const transacao = listaTransacoes();
+
+    console.log(transacao)
+
+    function tirarHidden(event : any){
+        let button = event.target.parentNode.parentNode.querySelector("main");
+        button.toggleAttribute("hidden");
     }
 </script>
+
+
+<!-- 
+    - fazer a validação de string vazia nos inputs de procura
+    - fazer o filtro da descrição e da categoria ao clicar no botão de procurar
+    - fazer atualizar automaticamente a parte das transações
+-->
 
 <style lang="scss" scoped>
 

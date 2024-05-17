@@ -20,6 +20,10 @@
     </main>
 </template>
 
+<!-- 
+    - fazer com que a tabela atualize automaticamente na tela
+ -->
+
 <style>
     table {
         font-family: arial, sans-serif;

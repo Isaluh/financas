@@ -5,7 +5,7 @@ export declare interface interfaceCategoria{
 
 export interface interfaceTransacao{
     id: number,
-    data: Date,
+    data: string,
     valor: number,
     descricao: string,
     categoria: interfaceCategoria
