@@ -11,7 +11,7 @@
             </thead>
             <tbody>
                 <tr v-for="item in categorias">
-                    <td><strong>{{ item }}</strong></td>
+                    <td><strong>{{ item.categoria }}</strong></td>
                     <td style="color: blue;">Editar</td>
                     <td style="color: red;">Excluir</td>
                 </tr>

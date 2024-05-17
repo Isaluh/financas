@@ -1,4 +1,4 @@
-export interface interfaceCategoria{
+export declare interface interfaceCategoria{
     id: number,
     categoria: string,
 }
