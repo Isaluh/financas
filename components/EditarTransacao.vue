@@ -36,10 +36,16 @@
 
     function cancelarEdicao(){
         const inputs = document.querySelectorAll<HTMLInputElement>(".inputs");
+        let categoriaSelecionada = document.querySelector("select");
+        
         inputs.forEach(x => {
             x.value = "";
         });
-    }
+        
+        if (categoriaSelecionada) {
+            categoriaSelecionada.selectedIndex = 0;
+        };
+    };
 
     function editarTransacao(){
         const inputs = document.querySelectorAll<HTMLInputElement>(".inputs");

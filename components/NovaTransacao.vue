@@ -48,6 +48,9 @@
         if (categoriaSelecionada) {
             categoriaSelecionada.selectedIndex = 0;
         };
+
+        const erro = document.querySelector("main")?.parentNode?.parentNode?.querySelector("#erro")
+        erro?.setAttribute("hidden", "hidden")
     };
     
     function adicionarTransacao(){
@@ -69,8 +72,8 @@
         };
         
         if(aux.length != 5){
-            //melhorar esse alert
-            alert("Transação não cadastrada, erro de valor nos campos");
+            const erro = document.querySelector("main")?.parentNode?.parentNode?.querySelector("#erro")
+            erro?.removeAttribute("hidden")
         }
         else{
             if(aux[1].charAt(0) == "-"){
@@ -80,11 +83,15 @@
 
             inserirTransacoes(cont, aux[0].split("-").reverse().join("/"), sinal, Number(aux[1]), aux[2], {id: Number(aux[3]), categoria: aux[4]});
             cont++;
+            
+            const erro = document.querySelector("main")?.parentNode?.parentNode?.querySelector("#erro")
+            erro?.setAttribute("hidden", "hidden")
         };
 
         if (categoriaSelecionada) {
             categoriaSelecionada.selectedIndex = 0;
         };
+
 
         aux = [];
     };
