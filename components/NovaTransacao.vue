@@ -40,20 +40,23 @@
     function cancelarEdicao(){
         const inputs = document.querySelectorAll<HTMLInputElement>(".inputs");
         let categoriaSelecionada = document.querySelector("select");
-
+        
         inputs.forEach(x => {
             x.value = "";
         });
-        // limpar select
-    }
+        
+        if (categoriaSelecionada) {
+            categoriaSelecionada.selectedIndex = 0;
+        };
+    };
     
     function adicionarTransacao(){
         const inputs = document.querySelectorAll<HTMLInputElement>(".inputs");
         let categoriaSelecionada = document.querySelector("select");
-        // verificar se o valor é + ou -
+        let sinal = false;
         inputs.forEach(x => {
             if(x.value.trim() != ""){
-                aux.push(x.value)
+                aux.push(x.value);
             }
             x.value = "";
         });
@@ -63,23 +66,28 @@
                 aux.push(categorias[i].id.toString());
                 aux.push(categorias[i].categoria);
             }
-        }
-
+        };
+        
         if(aux.length != 5){
             //melhorar esse alert
-            alert("Transação não cadastrada, erro de valor nos campos")
+            alert("Transação não cadastrada, erro de valor nos campos");
         }
         else{
-            inserirTransacoes(cont, aux[0].split("-").reverse().join("/"), Number(aux[1]), aux[2], {id: Number(aux[3]), categoria: aux[4]});
+            if(aux[1].charAt(0) == "-"){
+                sinal = true;
+                aux[1] = aux[1].replace("-", "");
+            };
+
+            inserirTransacoes(cont, aux[0].split("-").reverse().join("/"), sinal, Number(aux[1]), aux[2], {id: Number(aux[3]), categoria: aux[4]});
             cont++;
-        }
+        };
 
-        console.log(categoriaSelecionada?.selectedIndex)
+        if (categoriaSelecionada) {
+            categoriaSelecionada.selectedIndex = 0;
+        };
 
-        //limpar select
         aux = [];
-        
-    }
+    };
 </script>
 
 <style>

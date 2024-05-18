@@ -10,7 +10,11 @@
                         <h2 style="font-size: 20px;">{{ item.descricao }}</h2> 
                     </div>
                     <div style="display: flex; flex-direction: row; gap: 20px;">
-                        <h2 style="font-size: 20px;"><span style="color: green;">+</span> <strong>R$ {{ item.valor }}</strong> </h2>
+                        <h2 style="font-size: 20px;">
+                            <span v-if="item.sinal == false" style="color: green; margin-right: 5px;">+</span>
+                            <span v-if="item.sinal == true" style="color: red; margin-right: 5px">-</span> 
+                            <strong>R$ {{ item.valor }}</strong> 
+                        </h2>
                         <img style="width: 25px; height: 25px;" src="@/public/setaBaixo.svg" alt="" @click="editarTransacao">
                     </div>
                 </div>
@@ -34,6 +38,6 @@
     function editarTransacao(event : any){
         let button = event.target.parentNode.parentNode.parentNode.querySelector("#editarTransacao");
         button.toggleAttribute("hidden");
-    }   
+    }; 
     
 </script>

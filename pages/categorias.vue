@@ -20,13 +20,13 @@
                     inputs.value = "";
                 }else{
                     //retornar um erro
-                    console.log("valor inserido não condizente")
+                    alert("valor inserido não condizente");
                 }
                 cont++;
                 
             }
         }
-    }
+    };
 </script>
 
 <!-- 

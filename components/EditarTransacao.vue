@@ -44,7 +44,7 @@
     function editarTransacao(){
         const inputs = document.querySelectorAll<HTMLInputElement>(".inputs");
         inputs.forEach(x => {
-            console.log(x.value)
+            console.log(x.value);
             // pegar a transacao da vez e atualizar
         });
     }

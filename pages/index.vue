@@ -31,12 +31,10 @@
     const categorias = listaCategorias();
     const transacao = listaTransacoes();
 
-    console.log(transacao)
-
     function tirarHidden(event : any){
         let button = event.target.parentNode.parentNode.querySelector("main");
         button.toggleAttribute("hidden");
-    }
+    };
 </script>
 
 
