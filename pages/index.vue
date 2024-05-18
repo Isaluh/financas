@@ -38,7 +38,7 @@
     };
 
     function filtrarElemento(){
-        console.log("filtro")
+        console.log("filtro");
     };
 </script>
 

@@ -83,7 +83,7 @@
 
             inserirTransacoes(cont, aux[0].split("-").reverse().join("/"), sinal, Number(aux[1]), aux[2], {id: Number(aux[3]), categoria: aux[4]});
             cont++;
-            
+
             const erro = document.querySelector("main")?.parentNode?.parentNode?.querySelector("#erro")
             erro?.setAttribute("hidden", "hidden")
         };

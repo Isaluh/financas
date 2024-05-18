@@ -1,6 +1,13 @@
 <script setup lang="ts">
     const categorias = listaCategorias();
 
+    function editarCategoria(){
+        console.log("editar");
+    };
+
+    function excluirCategoria(){
+        console.log("excluir");
+    };
 </script>
 
 <template>
@@ -12,8 +19,8 @@
             <tbody>
                 <tr v-for="item in categorias">
                     <td><strong>{{ item.categoria }}</strong></td>
-                    <td style="color: blue;">Editar</td>
-                    <td style="color: red;">Excluir</td>
+                    <td @click="editarCategoria" style="cursor: pointer; color: blue;">Editar</td>
+                    <td @click="excluirCategoria" style="cursor: pointer; color: red;">Excluir</td>
                 </tr>
             </tbody>
         </table>
