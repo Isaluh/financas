@@ -31,15 +31,18 @@
 
                     if(verificador == false){
                         inserirCategorias(cont, inputs?.value);
+                        inputs.parentNode?.parentNode?.querySelector("#erro")?.setAttribute("hidden", "hidden");
                     }
                     else{
                         //arrumar msg do erro (categoria ja existente)
+                        // msgErro("Categoria já adicionada anteriormente")
                         inputs.parentNode?.parentNode?.querySelector("#erro")?.removeAttribute("hidden");
                     };
 
                     inputs.value = "";
                 }else{
                     //arrumar msg do erro
+                    // msgErro("O campos não foi preenchido corretamente. Tente novamente!")
                     inputs?.parentNode?.parentNode?.querySelector("#erro")?.removeAttribute("hidden");
                 }
                 cont++;

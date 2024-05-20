@@ -32,6 +32,8 @@
 </template>
 
 <script setup lang="ts">
+import { msgErro } from '~/composables/msgErro';
+
     const categorias = listaCategorias();
     let aux : string[] = [];
     let cont = 0;
@@ -72,6 +74,7 @@
         };
         
         if(aux.length != 5){
+            msgErro("Nem todos os campos foram preenchidos corretamente. Tente novamente!");
             const erro = document.querySelector("main")?.parentNode?.parentNode?.querySelector("#erro")
             erro?.removeAttribute("hidden")
         }
