@@ -31,9 +31,8 @@
     </main>
 </template>
 
-<script setup lang="ts">
-import { msgErro } from '~/composables/msgErro';
-
+<script setup lang="ts">;
+    let msgErro = ref("");
     const categorias = listaCategorias();
     let aux : string[] = [];
     let cont = 0;
@@ -74,7 +73,7 @@ import { msgErro } from '~/composables/msgErro';
         };
         
         if(aux.length != 5){
-            msgErro("Nem todos os campos foram preenchidos corretamente. Tente novamente!");
+            msgErro.value =  "Nem todos os campos foram preenchidos corretamente. Tente novamente!";
             const erro = document.querySelector("main")?.parentNode?.parentNode?.querySelector("#erro")
             erro?.removeAttribute("hidden")
         }
@@ -95,9 +94,12 @@ import { msgErro } from '~/composables/msgErro';
             categoriaSelecionada.selectedIndex = 0;
         };
 
-
         aux = [];
     };
+
+    watch(msgErro, (antes, depois) =>{
+        // passar essa msg pro index
+    })
 </script>
 
 <style>

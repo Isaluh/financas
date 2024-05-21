@@ -1,12 +1,23 @@
 <script setup lang="ts">
     const categorias = listaCategorias();
 
-    function editarCategoria(){
-        console.log("editar");
+    function editarCategoria(id : number){
+        console.log(id);
     };
 
-    function excluirCategoria(){
-        console.log("excluir");
+    function excluirCategoria(id : number){
+        let remove = 0;
+        console.log(id + " id escolhido");
+        for(var cat in categorias){
+            if(categorias[cat].id == id){
+                remove = Number(cat);
+                console.log(remove)
+                break;
+            }
+        }
+        console.log(categorias.slice(remove, 1))
+        categorias.slice(remove, 1);
+        console.log(categorias);
     };
 </script>
 
@@ -19,8 +30,8 @@
             <tbody>
                 <tr v-for="item in categorias">
                     <td><strong>{{ item.categoria }}</strong></td>
-                    <td @click="editarCategoria" style="cursor: pointer; color: blue;">Editar</td>
-                    <td @click="excluirCategoria" style="cursor: pointer; color: red;">Excluir</td>
+                    <td @click="editarCategoria(item.id)" style="cursor: pointer; color: blue;">Editar</td>
+                    <td @click="excluirCategoria(item.id)" style="cursor: pointer; color: red;">Excluir</td>
                 </tr>
             </tbody>
         </table>

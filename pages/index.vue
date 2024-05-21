@@ -2,7 +2,7 @@
 
 <template>
     <div style="margin: 0 10%;">
-        <Erro hidden />
+        <Erro hidden :mensagem="msgErro" />
         <div style="display: flex; flex-direction: row; justify-content: space-between;">
             <h1 style="margin-bottom: 15px; font-size: 27px;"><strong>Transações</strong></h1>
             <button @click="tirarHidden" style="border: none; background-color: #2451d4; color: white; width: 110px; border-radius: 5px; height: 40px;">Nova transação</button>
@@ -31,6 +31,8 @@
 <script setup lang="ts">
     const categorias = listaCategorias();
     const transacao = listaTransacoes();
+    let msgErro = ref("");
+    // tentar pegar a msg do nova transação
 
     function tirarHidden(event : any){
         let button = event.target.parentNode.parentNode.querySelector("main");
