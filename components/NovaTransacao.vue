@@ -32,7 +32,8 @@
 </template>
 
 <script setup lang="ts">;
-    let msgErro = ref("");
+    const msgErro = useState('msgErro')
+
     const categorias = listaCategorias();
     let aux : string[] = [];
     let cont = 0;
@@ -96,10 +97,6 @@
 
         aux = [];
     };
-
-    watch(msgErro, (antes, depois) =>{
-        // passar essa msg pro index
-    })
 </script>
 
 <style>

@@ -11,7 +11,8 @@
 </template>
 
 <script setup lang="ts">
-    let msgErro = ref("");
+    // let msgErro = ref("");
+    const msgErro = useState('msgErro', () => '')
     let cont = 0;
     const categoria = listaCategorias();
     let verificador = false;
@@ -46,9 +47,9 @@
         cont++;
     };
 
-    watch(msgErro, (antes, depois) =>{
+    // watch(msgErro, (antes, depois) =>{
         
-    })
+    // })
 </script>
 
 <!-- 

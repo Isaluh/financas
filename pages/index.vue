@@ -31,7 +31,7 @@
 <script setup lang="ts">
     const categorias = listaCategorias();
     const transacao = listaTransacoes();
-    let msgErro = ref("");
+    // let msgErro = ref("");
     // tentar pegar a msg do nova transação
 
     function tirarHidden(event : any){
@@ -42,6 +42,8 @@
     function filtrarElemento(){
         console.log("filtro");
     };
+
+    const msgErro = useState('msgErro', () => '')
 </script>
 
 
