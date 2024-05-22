@@ -1,10 +1,7 @@
 <script setup lang="ts">
-
-    // let mensagem = mostrarMsgErro();
     const props = defineProps({
         mensagem: String
     })
-    // fazer com q a mensagem seja enregue e ja recarregada na tela
 </script>
 
 <template>

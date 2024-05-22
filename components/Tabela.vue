@@ -6,18 +6,12 @@
     };
 
     function excluirCategoria(id : number){
-        let remove = 0;
-        console.log(id + " id escolhido");
         for(var cat in categorias){
             if(categorias[cat].id == id){
-                remove = Number(cat);
-                console.log(remove)
+                categorias.splice(Number(cat), 1);
                 break;
             }
         }
-        console.log(categorias.slice(remove, 1))
-        categorias.slice(remove, 1);
-        console.log(categorias);
     };
 </script>
 
