@@ -1,6 +1,6 @@
 <script setup lang="ts">
     const categorias = listaCategorias();
-    const msgErro = useState('msgErro');
+    const mensagem = msgErro();
 
     function edicaoConcluida(id : number){
         let novoCat = document.querySelectorAll<HTMLInputElement>("#novoCat");
@@ -24,8 +24,7 @@
                             }
 
                             if(verificador){
-                                // ELE NAO ESTA PEGANDO DIREITO, REFAÇA ESSA PARTE
-                                msgErro.value = "Categoria já existente";
+                                mensagem.value = "Categoria já existente";
                                 erro?.removeAttribute("hidden");
                             }
                             else{
@@ -47,7 +46,7 @@
                             }
                         }
                         else{
-                            msgErro.value = "O novo valor inserido é inválido. Tente novamente!";
+                            mensagem.value = "O novo valor inserido é inválido. Tente novamente!";
                             erro?.removeAttribute("hidden");
                         };
                     }

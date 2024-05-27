@@ -8,3 +8,12 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     appearance: none;
     margin: 0;
 }
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #dce8ff;
+    border-radius: 5px;
+}

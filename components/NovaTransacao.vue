@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">;
-    const msgErro = useState('msgErro')
+    const mensagem = msgErro();
 
     const categorias = listaCategorias();
     let aux : string[] = [];
@@ -74,7 +74,7 @@
         };
         
         if(aux.length != 5){
-            msgErro.value =  "Nem todos os campos foram preenchidos corretamente. Tente novamente!";
+            mensagem.value =  "Nem todos os campos foram preenchidos corretamente. Tente novamente!";
             const erro = document.querySelector("main")?.parentNode?.parentNode?.querySelector("#erro")
             erro?.removeAttribute("hidden")
         }

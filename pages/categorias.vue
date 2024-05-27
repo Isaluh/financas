@@ -1,6 +1,6 @@
 <template>
     <div style="margin: 0 10%;">
-        <Erro hidden :mensagem="msgErro" />
+        <Erro hidden :mensagem="mensagem" />
         <h1 style="margin-bottom: 15px; font-size: 27px;"><strong>Categorias</strong></h1>
         <div style="display: flex; flex-direction: row; gap: 10px;">
             <input class="inputs" ref="conteudo" type="text" style="border: 2px #A8A8A8 solid; height: 30px; padding-left: 5px; border-radius: 5px; ">
@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
     // let msgErro = ref("");
-    const msgErro = useState('msgErro', () => '')
+    const mensagem = msgErro();
     let cont = 0;
     const categoria = listaCategorias();
     let verificador = false;
@@ -34,14 +34,14 @@
                 inputs.parentNode?.parentNode?.querySelector("#erro")?.setAttribute("hidden", "hidden");
             }
             else{
-                msgErro.value = "Categoria já adicionada anteriormente";
+                mensagem.value = "Categoria já adicionada anteriormente";
                 inputs.parentNode?.parentNode?.querySelector("#erro")?.removeAttribute("hidden");
             };
             
             inputs.value = "";
             verificador = false;
         }else{
-            msgErro.value = "O campo não foi preenchido corretamente. Tente novamente!";
+            mensagem.value = "O campo não foi preenchido corretamente. Tente novamente!";
             inputs?.parentNode?.parentNode?.querySelector("#erro")?.removeAttribute("hidden");
         }
         cont++;

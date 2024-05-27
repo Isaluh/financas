@@ -34,6 +34,7 @@
 
 <script setup lang="ts">
     const transacao = listaTransacoes();
+    // const transacao = transacoesExistentes();
 
     function editarTransacao(event : any){
         let button = event.target.parentNode.parentNode.parentNode.querySelector("#editarTransacao");
